@@ -23,7 +23,7 @@ import Header from './Header';
 //     },
 //   ],
 // };
-const data = {
+const dataNew = {
   hs: [{x: 'Piano', y: 50}, {x: 'Thanh Nhạc', y: 10}, {x: 'Violin', y: 35}, 
     {x: 'Ghita', y: 27}, {x: 'Ký Xướng Âm', y: 17}, {x: 'Trống', y: 13}],
   gv: [{x: 'Piano', y: 5}, {x: 'Thanh Nhạc', y: 1}, {x: 'Violin', y: 3}, 

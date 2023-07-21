@@ -13,6 +13,7 @@ import {
 } from 'react-native-chart-kit'
 import HorizontalBarGraph from '@chartiful/react-native-horizontal-bar-graph';
 import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis } from "victory-native"
+import Header from './Header';
 
 // const barData = {
 //   labels: ['January', 'February', 'March', 'April', 'May', 'June'],
@@ -64,11 +65,7 @@ const chartConfig = {
 export default function App() {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.button}>
-      <Icon name="bars" style={styles.bar}></Icon>
-      </TouchableOpacity>
-      <Text style={styles.header}>Tổng hợp dữ liệu</Text>
-      <View style={styles.line}></View>
+      <Header></Header>
     <Text style={styles.title}>Tổng số học sinh các môn học</Text>
       <View style={styles.chart}>
       <VictoryChart style={{parent: {maxWidth: '100%'}}}>

@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Nguyễn Văn A",
+        "id": "GV01",
+        "chamcong": {
+            "bamuoiphut": 1,
+            "bonlamphut": 2,
+            "saumuoiphut": 3
+        },
+        "listlop": {
+            "monhoc": "Thanh nhạc",
+            "hocvien": ["thanh hà", "nhật lệ"]
+        }
+    },
+    {
+        "name": "Nguyễn Văn B",
+        "id": "GV02",
+        "chamcong": {
+            "bamuoiphut": 3,
+            "bonlamphut": 2,
+            "saumuoiphut": 1
+        },
+        "listlop": {
+            "monhoc": "Piano",
+            "hocvien": ["hihi", "huhu"]
+        }
+    },
+    {
+        "name": "Nguyễn Văn C",
+        "id": "GV03",
+        "chamcong": {
+            "bamuoiphut": 4,
+            "bonlamphut": 3,
+            "saumuoiphut": 5
+        }
+    },
+    {
+        "name": "Nguyễn Văn D",
+        "id": "GV04",
+        "chamcong": {
+            "bamuoiphut": 5,
+            "bonlamphut": 1,
+            "saumuoiphut": 4
+        }
+    }
+]

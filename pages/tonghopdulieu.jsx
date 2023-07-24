@@ -62,7 +62,7 @@ const chartConfig = {
   }
 };
 
-export default function App() {
+export default function Tonghopdulieu() {
   return (
     <View style={styles.container}>
       {/* <Header></Header> */}

@@ -1,0 +1,86 @@
+[
+    {
+        "thang": 1,
+        "ten": "Tháng 1",
+        "doanhThu": 100,
+        "luong": 80,
+        "loiNhuan": 10
+    },
+    {
+        "thang": 2,
+        "ten": "Tháng 2",
+        "doanhThu": 120,
+        "luong": 90,
+        "loiNhuan": 20
+    },
+    {
+        "thang": 3,
+        "ten": "Tháng 3",
+        "doanhThu": 200,
+        "luong": 170,
+        "loiNhuan": 20
+    },
+    {
+        "thang": 4,
+        "ten": "Tháng 4",
+        "doanhThu": 100,
+        "luong": 80,
+        "loiNhuan": 10
+    },
+    {
+        "thang": 5,
+        "ten": "Tháng 5",
+        "doanhThu": 100,
+        "luong": 80,
+        "loiNhuan": 10
+    },
+    {
+        "thang": 6,
+        "ten": "Tháng 6",
+        "doanhThu": 130,
+        "luong": 100,
+        "loiNhuan": 20
+    },
+    {
+        "thang": 7,
+        "ten": "Tháng 7",
+        "doanhThu": 100,
+        "luong": 80,
+        "loiNhuan": 10
+    },
+    {
+        "thang": 8,
+        "ten": "Tháng 8",
+        "doanhThu": 120,
+        "luong": 100,
+        "loiNhuan": 10
+    },
+    {
+        "thang": 9,
+        "ten": "Tháng 9",
+        "doanhThu": 100,
+        "luong": 80,
+        "loiNhuan": 10
+    },
+    {
+        "thang": 10,
+        "ten": "Tháng 10",
+        "doanhThu": 100,
+        "luong": 80,
+        "loiNhuan": 10
+    },
+    {
+        "thang": 11,
+        "ten": "Tháng 12",
+        "doanhThu": 100,
+        "luong": 80,
+        "loiNhuan": 10
+    },
+    {
+        "thang": 12,
+        "ten": "Tháng 12",
+        "doanhThu": 100,
+        "luong": 80,
+        "loiNhuan": 10
+    }
+]

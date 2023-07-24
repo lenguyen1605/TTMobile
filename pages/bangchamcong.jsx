@@ -3,16 +3,20 @@ import {React, useState} from 'react';
 import usersfake from './usersfake.json';
 import { Card, Divider} from 'react-native-paper'
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Overlay } from 'react-native-elements';
+import { Overlay, Header } from 'react-native-elements';
 
 export default function Bangchamcong() {
     const [visible, setVisible] = useState(false);
+    const [tempid, setTempId] = useState(0);
     return (
         <View>
             
             {usersfake.map((x,idx) => {
                 return (
-                    <TouchableOpacity onPress={() => setVisible(!visible)}>
+                    <TouchableOpacity onPress={() => {
+                        setVisible(!visible)
+                        setTempId(idx)
+                        }}>
                         <Card style = {{marginLeft: 10, marginRight: 10, marginTop: 10}}>
                             <Card.Title style ={{ backgroundColor: '#ADD8E6'}} titleStyle ={{fontWeight: 'bold', color: '#B22222', textAlign: 'justify'}} title ={x.name +' - '+ x.id}/>
                             <Divider style={{backgroundColor: '#ADD8E6'}}/>
@@ -29,7 +33,16 @@ export default function Bangchamcong() {
             <Overlay
                 isVisible={visible}
                 onBackdropPress={() =>setVisible(false)}>
-                <Text>Hello from Overlay!</Text>
+                    {/* <Card style ={{width: '100%'}}>
+                        <Card.Title title = {usersfake[tempid].name}> </Card.Title>
+                    </Card> */}
+                    <Header style = {{backgroundColor: '#ADD8E6'}} centerComponent={{ text: usersfake[tempid].name, style: { color: '#fff' } }}></Header>
+                    
+                {/* {usersfake?.map((x,idx) => {
+                    return (
+                        <Text> {x.name +' - '+ x.id} </Text>
+                    )
+                })} */}
             </Overlay>
         </View>
         

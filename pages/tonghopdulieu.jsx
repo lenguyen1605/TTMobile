@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-nati
 import React from 'react';
 import { useState } from 'react';
 // import { createStackNavigator } from '@react-navigation/stack';
-import Leaderboard from 'react-native-leaderboard';
+// import Leaderboard from 'react-native-leaderboard';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   LineChart,
@@ -17,16 +17,7 @@ import {
 import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis, VictoryLegend, VictoryPie,
 VictoryContainer } from "victory-native"
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
-// import Header from './Header';
 
-// const barData = {
-//   labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-//   datasets: [
-//     {
-//       data: [20, 45, 28, 80, 99, 43],
-//     },
-//   ],
-// };
 const data = {
   hs: [{x: 'Piano', y: 50}, {x: 'Thanh Nhạc', y: 10}, {x: 'Violin', y: 35}, 
     {x: 'Ghita', y: 27}, {x: 'Ký Xướng Âm', y: 17}, {x: 'Trống', y: 13}],
@@ -43,8 +34,6 @@ const [leaderStats, setLeaderStats] = [
 export default function DuLieu() {
   return (
     <ScrollView contentContainerStyle={{backgroundColor: '#fff'}}>
-      {/* <Header></Header> */}
-      {/* <View style={styles.container1}> */}
       <Text style={styles.title}>Tổng số học sinh các môn học</Text>
       <View style={styles.chart}>
       <VictoryChart style={{parent: {maxWidth: '100%', fontFamily: 'Helvetica Neue'}}}>
@@ -71,14 +60,6 @@ export default function DuLieu() {
       
       </View>
 
-      {/* </View> */}
-      {/* <View style={styles.leaderBoard}>
-        <Text>hihi</Text>
-        
-      </View> */}
-      {/* <View style={styles.leaderBoard}>
-        <Text></Text>
-        </View> */}
         <Text style={{fontWeight: 'bold', marginBottom: 20}}>Bảng xếp hạng giáo viên</Text>
         <View style={styles.leaderBoard}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginLeft: 30}}>

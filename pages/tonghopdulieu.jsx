@@ -5,6 +5,7 @@ import { useState } from 'react';
 // import { createStackNavigator } from '@react-navigation/stack';
 import Leaderboard from 'react-native-leaderboard';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import teachersfake from './teachersfake.json'
 import {
   LineChart,
   BarChart,
@@ -81,18 +82,24 @@ export default function DuLieu() {
         </View> */}
         <Text style={{fontWeight: 'bold', marginBottom: 20}}>Bảng xếp hạng giáo viên</Text>
         <View style={styles.leaderBoard}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginLeft: 30}}>
+          {teachersfake.sort((a, b) => a.hours - b.hours).slice(0, 3).map((x, idx) => {
+            return (
+              <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginLeft: 30}}>
+                <View style={styles.circle}></View>
+                <View style={styles.info}>
+                  <Text>Ten</Text>
+                </View>
+              </View>
+            )
+          })}
+        {/* <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginLeft: 30}}>
           <View style={styles.circle}></View>
           <View style={styles.info}></View>
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginLeft: 30}}>
           <View style={styles.circle}></View>
           <View style={styles.info}></View>
-        </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginLeft: 30}}>
-          <View style={styles.circle}></View>
-          <View style={styles.info}></View>
-        </View>
+        </View> */}
       </View>
       <VictoryContainer>
         <VictoryPie colorScale={["#8FBC8F", "#ADD8E6", "#FFC7C2"]}

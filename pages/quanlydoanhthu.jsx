@@ -38,10 +38,10 @@ export default function Doanhthu() {
             {doanhthufake?.map ((x, idx)=>{
                 return (
                     <DataTable.Row>
-                        <DataTable.Cell>{x.thang}</DataTable.Cell>
-                        <DataTable.Cell>{x.doanhThu}</DataTable.Cell>
-                        <DataTable.Cell>{x.luong}</DataTable.Cell>
-                        <DataTable.Cell>{x.loiNhuan}</DataTable.Cell>
+                        <DataTable.Cell numeric>{x.thang}</DataTable.Cell>
+                        <DataTable.Cell numeric>{x.doanhThu}</DataTable.Cell>
+                        <DataTable.Cell numeric>{x.luong}</DataTable.Cell>
+                        <DataTable.Cell numeric>{x.loiNhuan}</DataTable.Cell>
                     </DataTable.Row>
                 )
             })}

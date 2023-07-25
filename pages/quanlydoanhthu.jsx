@@ -15,7 +15,23 @@ const data = {
 }
 export default function Doanhthu() {
     return (
-        <ScrollView>
+        <ScrollView contentContainerStyle={{backgroundColor: '#fff'}}>
+        {/* <ScrollView> */}
+            <View style={styles.chart}>
+                <VictoryChart style={{parent: {maxWidth: '100%', fontFamily: 'Helvetica Neue'}}}>
+                    <VictoryAxis label="Tháng" style={{tickLabels: { fontSize: 10 }}}></VictoryAxis>
+                    <VictoryAxis label="Tiền (triệu đồng)" dependentAxis style={{tickLabels: { fontSize: 10 }}}></VictoryAxis>
+                    {console.log(doanhthu.slice(0, 3))}
+                    <VictoryGroup offset={20}>
+                        <VictoryBar barRatio={1} data={data.dt.slice(0, 3)} style={{data: {fill: '#E9967A'}}}></VictoryBar>
+                        <VictoryBar barRatio={1} data={data.lg.slice(0,3)} style={{data: {fill: '#ADD8E6'}}}></VictoryBar>
+                        <VictoryBar barRatio={1} data={data.ln.slice(0, 3)} style={{data: {fill: '#FFB6C1'}}}></VictoryBar>
+                    </VictoryGroup>
+                        
+                    
+
+                </VictoryChart>
+            </View>
             <DataTable>
                 <DataTable.Header style={{marginTop: 20}}>
                     <DataTable.Title >
@@ -42,30 +58,18 @@ export default function Doanhthu() {
                     </DataTable.Title>
                 </DataTable.Header>
 
-                {doanhthufake?.map ((x, idx)=>{
-                    return (
-                        <DataTable.Row>
-                            <DataTable.Cell numeric>{x.thang}</DataTable.Cell>
-                            <DataTable.Cell numeric>{x.doanhThu}</DataTable.Cell>
-                            <DataTable.Cell numeric>{x.luong}</DataTable.Cell>
-                            <DataTable.Cell numeric>{x.loiNhuan}</DataTable.Cell>
-                        </DataTable.Row>
-                    )
-                })}
-            </DataTable>
+            {doanhthufake?.map ((x, idx)=>{
+                return (
+                    <DataTable.Row>
+                        <DataTable.Cell numeric>{x.thang}</DataTable.Cell>
+                        <DataTable.Cell numeric>{x.doanhThu}</DataTable.Cell>
+                        <DataTable.Cell numeric>{x.luong}</DataTable.Cell>
+                        <DataTable.Cell numeric>{x.loiNhuan}</DataTable.Cell>
+                    </DataTable.Row>
+                )
+            })}
 
-            <View style={styles.chart}>
-                <VictoryChart style={{parent: {maxWidth: '100%', fontFamily: 'Helvetica Neue'}}}>
-                    <VictoryAxis label="Tháng" style={{tickLabels: { fontSize: 10 }}}></VictoryAxis>
-                    <VictoryAxis label="Tiền (triệu đồng)" dependentAxis style={{tickLabels: { fontSize: 10 }}}></VictoryAxis>
-                    {console.log(doanhthu.slice(0, 3))}
-                    <VictoryGroup offset={20}>
-                        <VictoryBar barRatio={1} data={data.dt.slice(0, 3)} style={{data: {fill: '#E9967A'}}}></VictoryBar>
-                        <VictoryBar barRatio={1} data={data.lg.slice(0,3)} style={{data: {fill: '#ADD8E6'}}}></VictoryBar>
-                        <VictoryBar barRatio={1} data={data.ln.slice(0, 3)} style={{data: {fill: '#FFB6C1'}}}></VictoryBar>
-                    </VictoryGroup>
-                </VictoryChart>
-            </View>
+        </DataTable>
         </ScrollView>
     )
 }

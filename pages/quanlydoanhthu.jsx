@@ -15,84 +15,45 @@ const data = {
 }
 export default function Doanhthu() {
     return (
-        // <DataTable>
-        //     <DataTable.Header style={{marginTop: 20}}>
-        //         <DataTable.Title >
-        //             <Text style ={styles.tableheader}>Tháng
-        //             </Text>
-        //         </DataTable.Title>
-
-        //         <DataTable.Title numeric>
-        //             <Text style ={styles.tableheader}>
-        //                 Doanh thu
-        //             </Text>
-        //         </DataTable.Title>
-
-        //         <DataTable.Title numeric>
-        //             <Text style ={styles.tableheader}>
-        //                 Lương
-        //             </Text>
-        //         </DataTable.Title>
-
-        //         <DataTable.Title numeric>
-        //             <Text style ={styles.tableheader}>
-        //                 Lợi nhuận
-        //             </Text>
-        //         </DataTable.Title>
-        //     </DataTable.Header>
-
-        //     {doanhthufake?.map ((x, idx)=>{
-        //         return (
-        //             <DataTable.Row>
-        //                 <DataTable.Cell>{x.thang}</DataTable.Cell>
-        //                 <DataTable.Cell>{x.doanhThu}</DataTable.Cell>
-        //                 <DataTable.Cell>{x.luong}</DataTable.Cell>
-        //                 <DataTable.Cell>{x.loiNhuan}</DataTable.Cell>
-        //             </DataTable.Row>
-        //         )
-        //     })}
-
-        // </DataTable>
         <ScrollView>
             <DataTable>
-            <DataTable.Header style={{marginTop: 20}}>
-                <DataTable.Title >
-                    <Text style ={styles.tableheader}>Tháng
-                    </Text>
-                </DataTable.Title>
+                <DataTable.Header style={{marginTop: 20}}>
+                    <DataTable.Title >
+                        <Text style ={styles.tableheader}>Tháng
+                        </Text>
+                    </DataTable.Title>
 
-                <DataTable.Title numeric>
-                    <Text style ={styles.tableheader}>
-                        Doanh thu
-                    </Text>
-                </DataTable.Title>
+                    <DataTable.Title numeric>
+                        <Text style ={styles.tableheader}>
+                            Doanh thu
+                        </Text>
+                    </DataTable.Title>
 
-                <DataTable.Title numeric>
-                    <Text style ={styles.tableheader}>
-                        Lương
-                    </Text>
-                </DataTable.Title>
+                    <DataTable.Title numeric>
+                        <Text style ={styles.tableheader}>
+                            Lương
+                        </Text>
+                    </DataTable.Title>
 
-                <DataTable.Title numeric>
-                    <Text style ={styles.tableheader}>
-                        Lợi nhuận
-                    </Text>
-                </DataTable.Title>
-            </DataTable.Header>
+                    <DataTable.Title numeric>
+                        <Text style ={styles.tableheader}>
+                            Lợi nhuận
+                        </Text>
+                    </DataTable.Title>
+                </DataTable.Header>
 
-            {doanhthufake?.map ((x, idx)=>{
-                return (
-                    <DataTable.Row>
-                        <DataTable.Cell numeric>{x.thang}</DataTable.Cell>
-                        <DataTable.Cell numeric>{x.doanhThu}</DataTable.Cell>
-                        <DataTable.Cell numeric>{x.luong}</DataTable.Cell>
-                        <DataTable.Cell numeric>{x.loiNhuan}</DataTable.Cell>
-                    </DataTable.Row>
-                )
-            })}
+                {doanhthufake?.map ((x, idx)=>{
+                    return (
+                        <DataTable.Row>
+                            <DataTable.Cell numeric>{x.thang}</DataTable.Cell>
+                            <DataTable.Cell numeric>{x.doanhThu}</DataTable.Cell>
+                            <DataTable.Cell numeric>{x.luong}</DataTable.Cell>
+                            <DataTable.Cell numeric>{x.loiNhuan}</DataTable.Cell>
+                        </DataTable.Row>
+                    )
+                })}
+            </DataTable>
 
-        </DataTable>
-        {/* <ScrollView> */}
             <View style={styles.chart}>
                 <VictoryChart style={{parent: {maxWidth: '100%', fontFamily: 'Helvetica Neue'}}}>
                     <VictoryAxis label="Tháng" style={{tickLabels: { fontSize: 10 }}}></VictoryAxis>
@@ -103,9 +64,6 @@ export default function Doanhthu() {
                         <VictoryBar barRatio={1} data={data.lg.slice(0,3)} style={{data: {fill: '#ADD8E6'}}}></VictoryBar>
                         <VictoryBar barRatio={1} data={data.ln.slice(0, 3)} style={{data: {fill: '#FFB6C1'}}}></VictoryBar>
                     </VictoryGroup>
-                        
-                    
-
                 </VictoryChart>
             </View>
         </ScrollView>

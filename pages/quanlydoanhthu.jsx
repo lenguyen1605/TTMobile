@@ -13,6 +13,15 @@ const data = {
     lg: doanhthu.map((d, idx) => ({x: d.ten, y: d.luong})),
     ln: doanhthu.map((d, idx) => ({x: d.ten, y: d.loiNhuan}))
 }
+
+const check_loinhuan = (loinhuan) => {
+  if (loinhuan < 0) {
+    return <Text style = {{color: 'red'}}>{loinhuan}</Text>
+  }
+  else return <Text>{loinhuan}</Text>
+}
+
+
 export default function Doanhthu() {
     return (
         <ScrollView contentContainerStyle={{backgroundColor: '#fff'}}>
@@ -33,15 +42,15 @@ export default function Doanhthu() {
                 </VictoryChart>
             </View>
             <DataTable>
-                <DataTable.Header style={{marginTop: 20}}>
-                    <DataTable.Title >
+                <DataTable.Header style={{marginTop: 10}}>
+                    <DataTable.Title>
                         <Text style ={styles.tableheader}>Tháng
                         </Text>
                     </DataTable.Title>
 
                     <DataTable.Title numeric>
                         <Text style ={styles.tableheader}>
-                            Doanh thu
+                            Doanh thu 
                         </Text>
                     </DataTable.Title>
 
@@ -57,17 +66,18 @@ export default function Doanhthu() {
                         </Text>
                     </DataTable.Title>
                 </DataTable.Header>
-
+            {/* <ScrollView> */}
             {doanhthufake?.map ((x, idx)=>{
                 return (
-                    <DataTable.Row>
+                    <DataTable.Row key = {idx}>
                         <DataTable.Cell numeric>{x.thang}</DataTable.Cell>
                         <DataTable.Cell numeric>{x.doanhThu}</DataTable.Cell>
                         <DataTable.Cell numeric>{x.luong}</DataTable.Cell>
-                        <DataTable.Cell numeric>{x.loiNhuan}</DataTable.Cell>
+                        <DataTable.Cell numeric> {check_loinhuan(x.loiNhuan)}</DataTable.Cell>
                     </DataTable.Row>
                 )
             })}
+            {/* </ScrollView> */}
 
         </DataTable>
         </ScrollView>
@@ -139,7 +149,8 @@ const styles = StyleSheet.create({
       width: '100%',
     },
     tableheader: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        alignItems: 'center'
     }
   });
   

@@ -7,10 +7,35 @@
             "bonlamphut": 2,
             "saumuoiphut": 3
         },
-        "listlop": {
-            "monhoc": "Thanh nhạc",
-            "hocvien": ["thanh hà", "nhật lệ"]
-        }
+        "listlop": [
+            {
+                "malop": "001",
+                "monhoc": "Thanh nhạc",
+                "hocvien": "thanh hà, nhật lệ",
+                "gioday": [
+                    {"cahoc": "0"},
+                    {"cahoc": "30"},
+                    {"cahoc": "0"},
+                    {"cahoc": "45"},
+                    {"cahoc": "0"},
+                    {"cahoc": "60"}
+                ]
+            },
+            {
+                "malop": "002",
+                "monhoc": "Trống",
+                "hocvien": "ihi, uhu",
+                "gioday": [
+                    {"cahoc": 45},
+                    {"cahoc": 0},
+                    {"cahoc": 30},
+                    {"cahoc": 45},
+                    {"cahoc": 45},
+                    {"cahoc": 0}
+                ]
+                
+            }
+        ]  
     },
     {
         "name": "Nguyễn Văn B",
@@ -20,10 +45,21 @@
             "bonlamphut": 2,
             "saumuoiphut": 1
         },
-        "listlop": {
+        "listlop": [
+            {
+            "malop": "003",
             "monhoc": "Piano",
-            "hocvien": ["hihi", "huhu"]
-        }
+            "hocvien": ["hihi", "huhu"],
+            "gioday": [
+                {"cahoc": 0},
+                {"cahoc": 30},
+                {"cahoc": 0},
+                {"cahoc": 45},
+                {"cahoc": 0},
+                {"cahoc": 60}
+            ]
+            }
+        ]
     },
     {
         "name": "Nguyễn Văn C",
@@ -32,7 +68,20 @@
             "bamuoiphut": 4,
             "bonlamphut": 3,
             "saumuoiphut": 5
-        }
+        },
+        "listlop": [{
+            "malop": "004",
+            "monhoc": "Piano",
+            "hocvien": ["hihi", "huhu"],
+            "gioday": [
+                {"cahoc": 0},
+                {"cahoc": 30},
+                {"cahoc": 0},
+                {"cahoc": 45},
+                {"cahoc": 0},
+                {"cahoc": 60}
+            ]
+        }]
     },
     {
         "name": "Nguyễn Văn D",
@@ -41,6 +90,19 @@
             "bamuoiphut": 5,
             "bonlamphut": 1,
             "saumuoiphut": 4
-        }
+        },
+        "listlop": [{
+            "malop": "005",
+            "monhoc": "Piano",
+            "hocvien": ["hihi", "huhu"],
+            "gioday": [
+                {"cahoc": 0},
+                {"cahoc": 30},
+                {"cahoc": 0},
+                {"cahoc": 45},
+                {"cahoc": 0},
+                {"cahoc": 60}
+            ]
+        }]
     }
 ]

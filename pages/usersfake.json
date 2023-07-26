@@ -10,7 +10,21 @@
         "listlop": {
             "monhoc": "Thanh nhạc",
             "hocvien": ["thanh hà", "nhật lệ"]
-        }
+        },
+        "soGio": [
+            {"thang": 1, "gio": 80},
+            {"thang": 2, "gio": 100},
+            {"thang": 3, "gio": 90},
+            {"thang": 4, "gio": 95},
+            {"thang": 5, "gio": 70},
+            {"thang": 6, "gio": 80},
+            {"thang": 7, "gio": 120},
+            {"thang": 8, "gio": 92},
+            {"thang": 9, "gio": 83},
+            {"thang": 10, "gio": 100},
+            {"thang": 11, "gio": 105},
+            {"thang": 12, "gio": 90} 
+        ]
     },
     {
         "name": "Nguyễn Văn B",
@@ -23,7 +37,21 @@
         "listlop": {
             "monhoc": "Piano",
             "hocvien": ["hihi", "huhu"]
-        }
+        },
+        "soGio": [
+            {"thang": 1, "gio": 80},
+            {"thang": 2, "gio": 100},
+            {"thang": 3, "gio": 90},
+            {"thang": 4, "gio": 95},
+            {"thang": 5, "gio": 70},
+            {"thang": 6, "gio": 80},
+            {"thang": 7, "gio": 120},
+            {"thang": 8, "gio": 92},
+            {"thang": 9, "gio": 83},
+            {"thang": 10, "gio": 100},
+            {"thang": 11, "gio": 105},
+            {"thang": 12, "gio": 90} 
+        ]
     },
     {
         "name": "Nguyễn Văn C",
@@ -32,7 +60,21 @@
             "bamuoiphut": 4,
             "bonlamphut": 3,
             "saumuoiphut": 5
-        }
+        },
+        "soGio": [
+            {"thang": 1, "gio": 80},
+            {"thang": 2, "gio": 100},
+            {"thang": 3, "gio": 90},
+            {"thang": 4, "gio": 95},
+            {"thang": 5, "gio": 70},
+            {"thang": 6, "gio": 80},
+            {"thang": 7, "gio": 120},
+            {"thang": 8, "gio": 92},
+            {"thang": 9, "gio": 83},
+            {"thang": 10, "gio": 100},
+            {"thang": 11, "gio": 105},
+            {"thang": 12, "gio": 90} 
+        ]
     },
     {
         "name": "Nguyễn Văn D",
@@ -41,6 +83,20 @@
             "bamuoiphut": 5,
             "bonlamphut": 1,
             "saumuoiphut": 4
-        }
+        },
+        "soGio": [
+            {"thang": 1, "gio": 80},
+            {"thang": 2, "gio": 100},
+            {"thang": 3, "gio": 90},
+            {"thang": 4, "gio": 95},
+            {"thang": 5, "gio": 70},
+            {"thang": 6, "gio": 80},
+            {"thang": 7, "gio": 120},
+            {"thang": 8, "gio": 92},
+            {"thang": 9, "gio": 83},
+            {"thang": 10, "gio": 100},
+            {"thang": 11, "gio": 105},
+            {"thang": 12, "gio": 90} 
+        ]
     }
 ]

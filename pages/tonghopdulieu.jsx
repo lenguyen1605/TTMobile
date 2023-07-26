@@ -6,6 +6,11 @@ import { useState } from 'react';
 // import Leaderboard from 'react-native-leaderboard';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import teachersfake from './teachersfake.json'
+import { SelectList } from 'react-native-dropdown-select-list'
+import usersfake from './usersfake.json'
+import {Calendar, LocaleConfig} from 'react-native-calendars';
+import MonthPicker from 'react-native-month-year-picker';
+
 import {
   LineChart,
   BarChart,
@@ -15,16 +20,17 @@ import {
   StackedBarChart
 } from 'react-native-chart-kit'
 // import HorizontalBarGraph from '@chartiful/react-native-horizontal-bar-graph';
-import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis, VictoryLegend, VictoryPie,
+import { VictoryChart, VictoryGroup, VictoryBar, VictoryAxis, VictoryLegend, VictoryPie, VictoryTheme,
 VictoryContainer } from "victory-native"
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
 const data = {
   hs: [{x: 'Piano', y: 50}, {x: 'Thanh Nhạc', y: 10}, {x: 'Violin', y: 35}, 
-    {x: 'Ghita', y: 27}, {x: 'Ký Xướng Âm', y: 17}, {x: 'Trống', y: 13}],
+    {x: 'Ghita', y: 27}, {x: 'KXA', y: 17}, {x: 'Trống', y: 13}],
   gv: [{x: 'Piano', y: 5}, {x: 'Thanh Nhạc', y: 1}, {x: 'Violin', y: 3}, 
-    {x: 'Ghita', y: 2}, {x: 'Ký Xướng Âm', y: 2}, {x: 'Trống', y: 1}]
+    {x: 'Ghita', y: 2}, {x: 'KXA', y: 2}, {x: 'Trống', y: 1}]
 }
+
 const screenWidth = Dimensions.get('window').width;
 const [leaderStats, setLeaderStats] = [
   {name: 'Lê Văn Lâm', hours: 40},
@@ -33,13 +39,14 @@ const [leaderStats, setLeaderStats] = [
 ]
 
 export default function DuLieu() {
+  const [date, setDate] = useState(new Date())
   return (
     <ScrollView contentContainerStyle={{backgroundColor: '#fff'}}>
       <Text style={styles.title}>Tổng số học sinh các môn học</Text>
       <View style={styles.chart}>
       <VictoryChart style={{parent: {maxWidth: '100%', fontFamily: 'Helvetica Neue'}}}>
-        <VictoryAxis label="Subject" style={{tickLabels: { fontSize: 10 }}}></VictoryAxis>
-        <VictoryAxis label="Số lượng" dependentAxis style={{tickLabels: { fontSize: 10 }}}></VictoryAxis>
+        <VictoryAxis label="Môn học" style={{tickLabels: { fontSize: 11 }}}></VictoryAxis>
+        <VictoryAxis label="Số lượng" dependentAxis style={{tickLabels: { fontSize: 11 }}} offsetX={50}></VictoryAxis>
         <VictoryGroup offset={20}>
           <VictoryBar barRatio={1} data={data.hs} style={{
             data: {
@@ -60,28 +67,30 @@ export default function DuLieu() {
       </VictoryChart>
       
       </View>
+      {/* <View style={{ flexDirection: 'row', padding: 15}}>
+      <Text style={styles.title}>Bảng xếp hạng giáo viên</Text> */}
+      {/* <SelectList
+                boxStyles={{width: 200, marginTop: 10, marginLeft: 0, height: 45}}
+                setSelected={(val) => setQuy(val)}
+                data={quyList} save="key">  
+              </SelectList> */}
+      <MonthPicker value={date} minimumDate={new Date(2023, 0)} maximumDate={new Date(2024, 0)}
+      locale="ko">
 
-        <Text style={{fontWeight: 'bold', marginBottom: 20}}>Bảng xếp hạng giáo viên</Text>
-        <View style={styles.leaderBoard}>
-          {teachersfake.sort((a, b) => a.hours - b.hours).slice(0, 3).map((x, idx) => {
-            return (
-              <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginLeft: 30}}>
-                <View style={styles.circle}></View>
-                <View style={styles.info}>
-                  <Text>Ten</Text>
-                </View>
-              </View>
-            )
-          })}
-        {/* <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginLeft: 30}}>
-          <View style={styles.circle}></View>
-          <View style={styles.info}></View>
+      </MonthPicker>
+      {/* </View> */}
+      <View style={styles.chart}>
+        <VictoryChart style={{parent: {maxWidth: '100%', fontFamily: 'Helvetica Neue'}}}>
+        <VictoryLegend orientation='horizontal' data={[{name: "Số giờ dạy", symbol: {fill: "#FFC7C2", type: "square"}}]}></VictoryLegend>
+        {/* <Text style={styles.title}>Bảng xếp hạng giáo viên</Text> */}
+        <VictoryAxis label="Tên giáo viên" style={{tickLabels: { fontSize: 12 }}}></VictoryAxis>
+        <VictoryAxis label="Số giờ dạy" dependentAxis style={{tickLabels: { fontSize: 10 }}} offsetX={37}></VictoryAxis>
+        <VictoryGroup offset={20}>
+          <VictoryBar barRatio={1} data={usersfake.map((x, idx) => ({x: x.name, y: x.soGio[0].gio}))}
+          style={{data: {width: 25, fill: "#FFC7C2"}}}></VictoryBar>
+        </VictoryGroup>
+        </VictoryChart>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', padding: 20, marginLeft: 30}}>
-          <View style={styles.circle}></View>
-          <View style={styles.info}></View>
-        </View> */}
-      </View>
       <VictoryContainer>
         <VictoryPie colorScale={["#8FBC8F", "#ADD8E6", "#FFC7C2"]}
         data={[
@@ -155,15 +164,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   title: {
-    marginTop: 50,
+    padding: 15,
+    // marginTop: 50,
     fontWeight: 'bold',
     marginLeft: 10,
     fontSize: 14
   },
   chart: {
     // marginBottom: 200,
+    marginLeft: '3%',
     padding: 0,
-    paddingTop: '10%',
+    paddingTop: '2%',
     borderRadius: 0,
     width: '100%',
   }

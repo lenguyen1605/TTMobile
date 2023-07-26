@@ -9,9 +9,9 @@
     {
         "thang": 2,
         "ten": "Tháng 2",
-        "doanhThu": 120,
+        "doanhThu": 80,
         "luong": 90,
-        "loiNhuan": 20
+        "loiNhuan": -10
     },
     {
         "thang": 3,
@@ -37,9 +37,9 @@
     {
         "thang": 6,
         "ten": "Tháng 6",
-        "doanhThu": 130,
+        "doanhThu": 80,
         "luong": 100,
-        "loiNhuan": 20
+        "loiNhuan": -20
     },
     {
         "thang": 7,

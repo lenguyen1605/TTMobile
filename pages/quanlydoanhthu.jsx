@@ -18,11 +18,20 @@ import { HocVienService } from '../services/hocvien.service';
 //     ln: doanhthu.map((d, idx) => ({x: d.ten, y: d.loiNhuan}))
 // }
 
-// const updateQuy = (idx) => {
-//   setQuy(idx + 1)
-// }
-// const quyList = [{ten: "Quý 1", ma: 1}, {ten: "Quý 2", ma: 2}, {ten: "Quý 3", ma: 3}, {ten: "Quý 4", ma: 4}]
-// const quyList = ["Quý 1", "Quý 2", "Quý 3", "Quý 4"]
+const data = {
+    dt: doanhthu.map((d, idx) => ({x: d.ten, y: d.doanhThu})),
+    lg: doanhthu.map((d, idx) => ({x: d.ten, y: d.luong})),
+    ln: doanhthu.map((d, idx) => ({x: d.ten, y: d.loiNhuan}))
+}
+
+const check_loinhuan = (loinhuan) => {
+  if (loinhuan < 0) {
+    return <Text style = {{color: 'red'}}>{loinhuan}</Text>
+  }
+  else return <Text>{loinhuan}</Text>
+}
+
+
 export default function Doanhthu() {
   const [quy, setQuy] = useState((new Date().getMonth() + 1) / 4 + 1)
   // const data = {
@@ -97,35 +106,36 @@ export default function Doanhthu() {
                     </Text>
                 </DataTable.Title>
 
-                <DataTable.Title numeric>
-                    <Text style ={styles.tableheader}>
-                        Doanh thu
-                    </Text>
-                </DataTable.Title>
+                    <DataTable.Title numeric>
+                        <Text style ={styles.tableheader}>
+                            Doanh thu 
+                        </Text>
+                    </DataTable.Title>
 
-                <DataTable.Title numeric>
-                    <Text style ={styles.tableheader}>
-                        Lương
-                    </Text>
-                </DataTable.Title>
+                    <DataTable.Title numeric>
+                        <Text style ={styles.tableheader}>
+                            Lương
+                        </Text>
+                    </DataTable.Title>
 
-                <DataTable.Title numeric>
-                    <Text style ={styles.tableheader}>
-                        Lợi nhuận
-                    </Text>
-                </DataTable.Title>
-            </DataTable.Header>
-
+                    <DataTable.Title numeric>
+                        <Text style ={styles.tableheader}>
+                            Lợi nhuận
+                        </Text>
+                    </DataTable.Title>
+                </DataTable.Header>
+            {/* <ScrollView> */}
             {doanhthufake?.map ((x, idx)=>{
                 return (
                     <DataTable.Row>
                         <DataTable.Cell numeric style={{flex: 0.5, justifyContent: 'center'}}>{x.thang}</DataTable.Cell>
                         <DataTable.Cell numeric>{x.doanhThu}</DataTable.Cell>
                         <DataTable.Cell numeric>{x.luong}</DataTable.Cell>
-                        <DataTable.Cell numeric>{x.loiNhuan}</DataTable.Cell>
+                        <DataTable.Cell numeric> {check_loinhuan(x.loiNhuan)}</DataTable.Cell>
                     </DataTable.Row>
                 )
             })}
+            {/* </ScrollView> */}
 
         </DataTable>
         </ScrollView>
@@ -198,7 +208,8 @@ const styles = StyleSheet.create({
       width: '100%',
     },
     tableheader: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        alignItems: 'center'
     }
   });
   

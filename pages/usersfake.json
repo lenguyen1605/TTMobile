@@ -7,24 +7,35 @@
             "bonlamphut": 2,
             "saumuoiphut": 3
         },
-        "listlop": {
-            "monhoc": "Thanh nhạc",
-            "hocvien": ["thanh hà", "nhật lệ"]
-        },
-        "soGio": [
-            {"thang": 1, "gio": 80},
-            {"thang": 2, "gio": 100},
-            {"thang": 3, "gio": 90},
-            {"thang": 4, "gio": 95},
-            {"thang": 5, "gio": 70},
-            {"thang": 6, "gio": 80},
-            {"thang": 7, "gio": 120},
-            {"thang": 8, "gio": 92},
-            {"thang": 9, "gio": 83},
-            {"thang": 10, "gio": 100},
-            {"thang": 11, "gio": 105},
-            {"thang": 12, "gio": 90} 
-        ]
+        "listlop": [
+            {
+                "malop": "001",
+                "monhoc": "Thanh nhạc",
+                "hocvien": "thanh hà, nhật lệ",
+                "gioday": [
+                    {"cahoc": "0"},
+                    {"cahoc": "30"},
+                    {"cahoc": "0"},
+                    {"cahoc": "45"},
+                    {"cahoc": "0"},
+                    {"cahoc": "60"}
+                ]
+            },
+            {
+                "malop": "002",
+                "monhoc": "Trống",
+                "hocvien": "ihi, uhu",
+                "gioday": [
+                    {"cahoc": 45},
+                    {"cahoc": 0},
+                    {"cahoc": 30},
+                    {"cahoc": 45},
+                    {"cahoc": 45},
+                    {"cahoc": 0}
+                ]
+                
+            }
+        ]  
     },
     {
         "name": "Nguyễn Văn B",
@@ -34,23 +45,12 @@
             "bonlamphut": 2,
             "saumuoiphut": 1
         },
-        "listlop": {
+        "listlop": [
+            {
+            "malop": "003",
             "monhoc": "Piano",
             "hocvien": ["hihi", "huhu"]
-        },
-        "soGio": [
-            {"thang": 1, "gio": 80},
-            {"thang": 2, "gio": 100},
-            {"thang": 3, "gio": 90},
-            {"thang": 4, "gio": 95},
-            {"thang": 5, "gio": 70},
-            {"thang": 6, "gio": 80},
-            {"thang": 7, "gio": 120},
-            {"thang": 8, "gio": 92},
-            {"thang": 9, "gio": 83},
-            {"thang": 10, "gio": 100},
-            {"thang": 11, "gio": 105},
-            {"thang": 12, "gio": 90} 
+            }
         ]
     },
     {
@@ -61,20 +61,19 @@
             "bonlamphut": 3,
             "saumuoiphut": 5
         },
-        "soGio": [
-            {"thang": 1, "gio": 80},
-            {"thang": 2, "gio": 100},
-            {"thang": 3, "gio": 90},
-            {"thang": 4, "gio": 95},
-            {"thang": 5, "gio": 70},
-            {"thang": 6, "gio": 80},
-            {"thang": 7, "gio": 120},
-            {"thang": 8, "gio": 92},
-            {"thang": 9, "gio": 83},
-            {"thang": 10, "gio": 100},
-            {"thang": 11, "gio": 105},
-            {"thang": 12, "gio": 90} 
-        ]
+        "listlop": [{
+            "malop": "004",
+            "monhoc": "Piano",
+            "hocvien": ["hihi", "huhu"],
+            "gioday": [
+                {"cahoc": 0},
+                {"cahoc": 30},
+                {"cahoc": 0},
+                {"cahoc": 45},
+                {"cahoc": 0},
+                {"cahoc": 60}
+            ]
+        }]
     },
     {
         "name": "Nguyễn Văn D",
@@ -84,19 +83,18 @@
             "bonlamphut": 1,
             "saumuoiphut": 4
         },
-        "soGio": [
-            {"thang": 1, "gio": 80},
-            {"thang": 2, "gio": 100},
-            {"thang": 3, "gio": 90},
-            {"thang": 4, "gio": 95},
-            {"thang": 5, "gio": 70},
-            {"thang": 6, "gio": 80},
-            {"thang": 7, "gio": 120},
-            {"thang": 8, "gio": 92},
-            {"thang": 9, "gio": 83},
-            {"thang": 10, "gio": 100},
-            {"thang": 11, "gio": 105},
-            {"thang": 12, "gio": 90} 
-        ]
+        "listlop": [{
+            "malop": "005",
+            "monhoc": "Piano",
+            "hocvien": ["hihi", "huhu"],
+            "gioday": [
+                {"cahoc": 0},
+                {"cahoc": 30},
+                {"cahoc": 0},
+                {"cahoc": 45},
+                {"cahoc": 0},
+                {"cahoc": 60}
+            ]
+        }]
     }
 ]
